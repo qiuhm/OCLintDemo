@@ -1,0 +1,26 @@
+.DS_Store
+.hgignore
+DerivedData/*
+build/*
+.hg/*
+.svn/
+Podfile.lock
+infer-out/*
+*.gcda
+*.gcno
+**/compile_commands.json
+**/oclint.xml
+
+Pods/*
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+*.xccheckout
+project.xcworkspace/
+xcuserdata/
+
+.idea/
