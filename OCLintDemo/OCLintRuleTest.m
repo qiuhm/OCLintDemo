@@ -26,7 +26,8 @@
 }
 
 -(void)testRuleEmptyIfStatement{
-    if (a == 1) {
+    int a;
+    if ( a == 1) {
         // empty if
     }
 }

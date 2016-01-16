@@ -255,7 +255,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#created by tingxuan.qhm\nsource ~/.bash_profile\n\necho \"******** start check the oclint ********\"\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\necho \"******** end check the oclint ********\"\necho \"******** start clean the environment ********\"\ncd ${SRCROOT}\nrm -rf **/compile_commands.json\nrm -rf **/oclint.xml\nxctool -scheme TBDetailSDK clean\necho \"******** end clean the environment ********\"\n\necho \"******** start building ********\"\nxctool \\\n-project ${PROJECT_NAME}.xcodeproj  \\\n-scheme ${PROJECT_NAME} \\\n-reporter json-compilation-database:compile_commands.json \\\nbuild\necho \"******** end building ********\"\n\necho \"******** start analyzing ********\"\noclint-json-compilation-database -- -report-type xcode\necho \"******** end analyzing ********\"";
+			shellScript = "#created by qiuhm\nsource ~/.bash_profile\n\necho \"******** start check the oclint ********\"\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\necho \"******** end check the oclint ********\"\necho \"******** start clean the environment ********\"\ncd ${SRCROOT}\nrm -rf **/compile_commands.json\nrm -rf **/oclint.xml\necho ${PROJECT_NAME}\nxctool -scheme ${PROJECT_NAME} clean\necho \"******** end clean the environment ********\"\n\necho \"******** start building ********\"\nxctool \\\n-project ${PROJECT_NAME}.xcodeproj  \\\n-scheme ${PROJECT_NAME} \\\n-reporter json-compilation-database:compile_commands.json \\\nbuild\necho \"******** end building ********\"\n\necho \"******** start analyzing ********\"\noclint-json-compilation-database -- -report-type xcode\necho \"******** end analyzing ********\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -470,6 +470,7 @@
 				D4D507431C47744000B4868F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4D507441C47744000B4868F /* Build configuration list for PBXNativeTarget "OCLintDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +479,7 @@
 				D4D507461C47744000B4868F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4D5075A1C4774BF00B4868F /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +488,7 @@
 				D4D5075C1C4774BF00B4868F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
